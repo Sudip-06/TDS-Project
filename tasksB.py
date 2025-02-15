@@ -4,7 +4,7 @@
 import os
 
 def B12(filepath):
-    if filepath.startswith('/home/ritwik01/project/Project-1/data'):
+    if filepath.startswith('/home/sudip/Project-1/data'):
         # raise PermissionError("Access outside /data is not allowed.")
         # print("Access outside /data is not allowed.")
         return True
