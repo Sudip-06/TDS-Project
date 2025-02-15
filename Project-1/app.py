@@ -21,7 +21,7 @@ from fastapi.responses import PlainTextResponse, JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from tasksA import *
 from tasksB import *
-from t import *
+#from t import *
 import requests
 from dotenv import load_dotenv
 import os
