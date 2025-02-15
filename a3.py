@@ -23,3 +23,4 @@ with open("/home/sudip/project-1/data/dates-wednesdays.txt", "w") as f:
     f.write(str(wednesdays))
 
 print(f"Total Wednesdays: {wednesdays}")
+#
