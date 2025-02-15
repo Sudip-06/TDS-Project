@@ -27,6 +27,10 @@ import os
 import re
 import httpx
 import json
+import sys
+
+
+sys.path.append(os.path.dirname(os.path.abspath(__file__))) 
 
 app = FastAPI()
 
