@@ -28,7 +28,7 @@ def A1(email="23f3004246@ds.study.iitm.ac.in"):
     except subprocess.CalledProcessError as e:
         raise HTTPException(status_code=500, detail=f"Error: {e.stderr}")
 # A1()
-def A2(prettier_version="prettier@3.4.2", filename="/home/ritwik01/project/Project-1/data"):
+def A2(prettier_version="prettier@3.4.2", filename="/home/sudip/project-1/data/format.md"):
     command = [r"C:\Program Files\nodejs\npx.cmd", prettier_version, "--write", filename]
     try:
         subprocess.run(command, check=True)
@@ -36,7 +36,7 @@ def A2(prettier_version="prettier@3.4.2", filename="/home/ritwik01/project/Proje
     except subprocess.CalledProcessError as e:
         print(f"An error occurred: {e}")
 
-def A3(filename='/home/ritwik01/project/Project-1/data/dates.txt', targetfile='/home/ritwik01/project/Project-1/data/dates-wednesdays.txt', weekday=2):
+def A3(filename='/home/sudip/project-1/data/dates.txt', targetfile='/home/sudip/project-1/data/dates-wednesdays.txt', weekday=2):
     input_file = filename
     output_file = targetfile
     weekday = weekday
@@ -49,7 +49,7 @@ def A3(filename='/home/ritwik01/project/Project-1/data/dates.txt', targetfile='/
     with open(output_file, 'w') as file:
         file.write(str(weekday_count))
 
-def A4(filename="/home/ritwik01/project/Project-1/data/contacts.json", targetfile="/home/ritwik01/project/Project-1/data/contacts-sorted.json"):
+def A4(filename="/home/sudip/project-1/data/contacts.json", targetfile="/home/sudip/project-1/data/contacts-sorted.json"):
     # Load the contacts from the JSON file
     with open(filename, 'r') as file:
         contacts = json.load(file)
@@ -61,7 +61,7 @@ def A4(filename="/home/ritwik01/project/Project-1/data/contacts.json", targetfil
     with open(targetfile, 'w') as file:
         json.dump(sorted_contacts, file, indent=4)
 
-def A5(log_dir_path='/home/ritwik01/project/Project-1/data/logs', output_file_path='/home/ritwik01/project/Project-1/data/logs-recent.txt', num_files=10):
+def A5(log_dir_path='/home/sudip/project-1/data/logs', output_file_path='/home/sudip/project-1/data/logs-recent.txt', num_files=10):
     log_dir = Path(log_dir_path)
     output_file = Path(output_file_path)
 
@@ -75,7 +75,7 @@ def A5(log_dir_path='/home/ritwik01/project/Project-1/data/logs', output_file_pa
                 first_line = f_in.readline().strip()
                 f_out.write(f"{first_line}\n")
 
-def A6(doc_dir_path='/home/ritwik01/project/Project-1/data/docs', output_file_path='/home/ritwik01/project/Project-1/data/docs/index.json'):
+def A6(doc_dir_path='/home/sudip/project-1/data/docs', output_file_path='/home/sudip/project-1/data/docs/index.json'):
     docs_dir = doc_dir_path
     output_file = output_file_path
     index_data = {}
@@ -101,7 +101,7 @@ def A6(doc_dir_path='/home/ritwik01/project/Project-1/data/docs', output_file_pa
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(index_data, f, indent=4)
 
-def A7(filename='/home/ritwik01/project/Project-1/data/email.txt', output_file='/home/ritwik01/project/Project-1/data/email-sender.txt'):
+def A7(filename='/home/sudip/project-1/data/email.txt', output_file='/home/sudip/project-1/data/email-sender.txt'):
     # Read the content of the email
     with open(filename, 'r') as file:
         email_content = file.readlines()
@@ -156,7 +156,7 @@ def png_to_base64(image_path):
 #     except Exception as e:
 #         print(f"❌ Error writing {output_file}: {e}")
 
-def A8(filename='/home/ritwik01/project/Project-1/data/credit_card.txt', image_path='/home/ritwik01/project/Project-1/data/credit_card.png'):
+def A8(filename='/home/sudip/project-1/data/credit_card.txt', image_path='/home/sudip/project-1/data/credit_card.png'):
     # Construct the request body for the AIProxy call
     body = {
         "model": "gpt-4o-mini",
@@ -214,7 +214,7 @@ def get_embedding(text):
     response.raise_for_status()
     return response.json()["data"][0]["embedding"]
 
-def A9(filename='/home/ritwik01/project/Project-1/data/comments.txt', output_filename='/home/ritwik01/project/Project-1/data/comments-similar.txt'):
+def A9(filename='/home/sudip/project-1/data/comments.txt', output_filename='/home/sudip/project-1/data/comments-similar.txt'):
     # Read comments
     with open(filename, 'r') as f:
         comments = [line.strip() for line in f.readlines()]
@@ -238,7 +238,7 @@ def A9(filename='/home/ritwik01/project/Project-1/data/comments.txt', output_fil
         f.write(most_similar[0] + '\n')
         f.write(most_similar[1] + '\n')
 
-def A10(filename='/home/ritwik01/project/Project-1/data/ticket-sales.db', output_filename='/home/ritwik01/project/Project-1/data/ticket-sales-gold.txt', query="SELECT SUM(units * price) FROM tickets WHERE type = 'Gold'"):
+def A10(filename='/home/sudip/project-1/data/ticket-sales.db', output_filename='/home/sudip/project-1/data/ticket-sales-gold.txt', query="SELECT SUM(units * price) FROM tickets WHERE type = 'Gold'"):
     # Connect to the SQLite database
     conn = sqlite3.connect(filename)
     cursor = conn.cursor()
