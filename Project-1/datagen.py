@@ -21,7 +21,7 @@ from PIL import Image, ImageDraw, ImageFont
 from faker import Faker
 
 config = {}  # Initialize config as a dictionary
-config["root"] = "/home/sudip/project-1/data"
+config["root"] = "/home/sudip/project/data"
 
 
 

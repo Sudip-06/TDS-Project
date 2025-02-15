@@ -17,7 +17,7 @@ ENV PATH="/root/.local/bin:$PATH"
 WORKDIR /app
 
 # Copy application files
-COPY . /app
+COPY app.py /app
 
 # Explicitly set the correct binary path and use `sh -c`
-CMD ["uv", "run", "app.py"]
+CMD ["/root/.local/bin/uv", "run", "app.py"]
